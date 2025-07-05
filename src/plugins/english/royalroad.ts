@@ -8,7 +8,7 @@ import { isUrlAbsolute } from '@libs/isAbsoluteUrl';
 class RoyalRoad implements Plugin.PluginBase {
   id = 'royalroad';
   name = 'Royal Road';
-  version = '2.2.3';
+  version = '2.2.4';
   icon = 'src/en/royalroad/icon.png';
   site = 'https://www.royalroad.com/';
 
@@ -406,7 +406,7 @@ class RoyalRoad implements Plugin.PluginBase {
             case ParsingState.InNote:
               const noteClass = `author-note-${isBeforeChapter ? 'before' : 'after'}`;
               const notesHtml = notesHtmlParts.join('').trim();
-              const fullNote = `<div class="${noteClass}">${notesHtml}</div>`;
+              const fullNote = `<details><summary>Author’s Note</summary><div class="${noteClass}">${notesHtml}</div></details>`;
               if (isBeforeChapter) {
                 beforeNotesParts.push(fullNote);
               } else {
