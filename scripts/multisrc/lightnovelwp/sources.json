@@ -10,13 +10,13 @@
   },
   {
     "id": "kolnovel",
-    "sourceSite": "https://koltry.life/",
+    "sourceSite": "https://kolnovel.site/",
     "sourceName": "Kol Novel",
     "options": {
       "lang": "Arabic",
       "reverseChapters": true,
       "customJs": "$('article > style').text().match(/\\.\\w+(?=\\s*[,{])/g)?.forEach(tag => $(`p${tag}`).remove());$('.epcontent .code-block').remove();",
-      "versionIncrements": 8
+      "versionIncrements": 9
     }
   },
   {
@@ -101,12 +101,13 @@
   },
   {
     "id": "novelsknight",
-    "sourceSite": "https://faloonovels.online/",
+    "sourceSite": "https://novelsknight.punchmanga.online/",
     "sourceName": "NovelsKnight",
     "options": {
       "lang": "English",
       "reverseChapters": true,
-      "versionIncrements": 1
+      "versionIncrements": 2,
+      "customJs": "$('.announ').remove();         return $('.epcontent').eq(-1).find('p').map(function (i, el) {          return '<p>' + $(this).text() + '</p>';        }).toArray().join('\\n') || '';"
     }
   },
   {
@@ -274,6 +275,14 @@
       "lang": "Spanish",
       "reverseChapters": true
     }
+  },
+  {
+    "id": "transweaver",
+    "sourceSite": "https://transweaver.com/",
+    "sourceName": "Translation Weaver",
+    "options": {
+      "lang": "English",
+      "reverseChapters": true
+    }
   }
-
 ]
