@@ -42,7 +42,7 @@ class LightNovelWPPlugin implements Plugin.PluginBase {
     this.icon = `multisrc/lightnovelwp/${metadata.id.toLowerCase()}/icon.png`;
     this.site = metadata.sourceSite;
     const versionIncrements = metadata.options?.versionIncrements || 0;
-    this.version = `1.1.${13 + versionIncrements}`;
+    this.version = `1.1.${17 + versionIncrements}`;
     this.options = metadata.options ?? ({} as LightNovelWPOptions);
     this.filters = metadata.filters satisfies Filters;
 
@@ -365,6 +365,8 @@ class LightNovelWPPlugin implements Plugin.PluginBase {
         else if (isReadingSummary) {
           if (name === 'p') {
             novel.summary += '\n\n';
+          } else if (name === 'br') {
+            novel.summary += '\n';
           } else if (name === 'div' || name === 'script') {
             isReadingSummary--;
           }
